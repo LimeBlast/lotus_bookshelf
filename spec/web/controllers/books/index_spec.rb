@@ -18,6 +18,6 @@ describe Web::Controllers::Books::Index do
 
   it 'exposes all books' do
     action.call(params)
-    action.exposes[:books].must_equal [@book]
+    action.exposures[:books].must_equal [@book]
   end
 end

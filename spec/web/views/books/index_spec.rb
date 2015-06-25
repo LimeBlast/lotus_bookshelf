@@ -20,12 +20,12 @@ describe Web::Views::Books::Index do
   describe 'when there are books' do
     let(:book1) { Book.new(title: 'Refactoring', author: 'Martin Fowler') }
     let(:book2) { Book.new(title: 'Domain Driven Design', author: 'Eric Evans') }
-    let(:exposes) { Hash[books: [book1, book2]] }
+    let(:exposures) { Hash[books: [book1, book2]] }
 
     it 'lists them all' do
       rendered.scan(/class="book"/).count.must_equal 2
-      rendered.must_include.('Refactoring')
-      rendered.must_include.('Domain Driven Design')
+      rendered.must_include('Refactoring')
+      rendered.must_include('Domain Driven Design')
     end
 
     it 'hides the placeholder message' do

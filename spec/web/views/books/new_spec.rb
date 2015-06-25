@@ -3,7 +3,7 @@ require_relative '../../../../apps/web/views/books/new'
 
 describe Web::Views::Books::New do
   let(:params)    { Lotus::Action::Params.new({}) }
-  let(:exposures) { Hash[foo: 'bar'] }
+  let(:exposures) { Hash[params: params] }
   let(:template)  { Lotus::View::Template.new('apps/web/templates/books/new.html.erb') }
   let(:view)      { Web::Views::Books::New.new(template, exposures) }
   let(:rendered)  { view.render }

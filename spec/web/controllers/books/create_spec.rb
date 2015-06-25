@@ -20,7 +20,7 @@ describe Web::Controllers::Books::Create do
       response = action.call(params)
 
       response[0].must_equal 302
-      response[1]['Location'].must_equal '/books'
+      response[1]['Location'].must_equal Web::Routes.url(:books)
     end
   end
 

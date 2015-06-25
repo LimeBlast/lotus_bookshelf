@@ -21,7 +21,7 @@ Lotus::Model.configure do
   # Migrations
   #
   migrations 'db/migrations'
-  schema     'db/schema.sql'
+  schema 'db/schema.sql'
 
   ##
   # Database mapping
@@ -36,12 +36,14 @@ Lotus::Model.configure do
   #
   mapping do
     collection :books do
-      entity     Book
+      entity Book
       repository BookRepository
 
-      attribute :id,     Integer
-      attribute :title,  String
+      attribute :id, Integer
+      attribute :title, String
       attribute :author, String
+      attribute :created_at, DateTime
+      attribute :updated_at, DateTime
     end
   end
 end.load!
